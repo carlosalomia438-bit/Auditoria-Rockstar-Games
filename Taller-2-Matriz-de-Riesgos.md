@@ -46,83 +46,16 @@ La probabilidad y el impacto se califican de 1 a 5:
 
 ## 5. Matriz de riesgos
 
-### Riesgo 1. Acceso no autorizado a información a través de un tercero
+La siguiente tabla reúne los campos solicitados. Las puntuaciones son estimaciones académicas y las vulnerabilidades hipotéticas deben comprobarse durante una auditoría; no se presentan como fallas confirmadas.
 
-- **Activo/proceso:** Plataformas de nube e información corporativa.
-- **Amenaza:** Atacantes externos que aprovechan accesos o integraciones de proveedores.
-- **Vulnerabilidad:** Posible debilidad en los permisos, credenciales o conexión de un tercero. El vector técnico exacto del incidente de 2026 debe verificarse; no se presenta como confirmado.
-- **Riesgo y consecuencia:** Un acceso externo a través de un proveedor podría permitir consultar o extraer información confidencial y generar costos de investigación, extorsión o daño reputacional.
-- **Probabilidad:** 4/5.
-- **Impacto:** 4/5.
-- **Nivel:** **16/25 — Crítico.**
-- **Control actual/evidencia:** Se conoce el incidente comunicado públicamente en abril de 2026. Las medidas específicas de control de proveedores y accesos no se pueden confirmar con las fuentes públicas consultadas.
-- **Control propuesto:** Aplicar mínimo privilegio a cada proveedor, limitar el alcance y duración de tokens, exigir autenticación multifactor cuando corresponda, revisar integraciones periódicamente, revocar accesos que ya no se necesiten y monitorear actividad anormal.
-- **Justificación de prioridad:** Es la prioridad principal porque existe un incidente público reciente relacionado con acceso a información y terceros.
-
-### Riesgo 2. Filtración de material confidencial de desarrollo
-
-- **Activo/proceso:** Código, diseños, videos de prueba y versiones preliminares de videojuegos.
-- **Amenaza:** Intrusos externos o personas que obtienen acceso no autorizado a los repositorios y sistemas internos.
-- **Vulnerabilidad:** La exposición concreta actual no está confirmada. Se debe revisar la separación de ambientes, los permisos de repositorios y la protección de archivos confidenciales.
-- **Riesgo y consecuencia:** La divulgación anticipada de material podría afectar lanzamientos, facilitar fraudes o suplantaciones, perjudicar la ventaja competitiva y afectar la reputación.
-- **Probabilidad:** 4/5.
-- **Impacto:** 5/5.
-- **Nivel:** **20/25 — Crítico.**
-- **Control actual/evidencia:** En 2022, Take-Two reportó el acceso no autorizado a sistemas de Rockstar y la descarga de información confidencial, incluido material temprano de desarrollo. No se dispone aquí de evidencia suficiente para verificar los controles actuales.
-- **Control propuesto:** Restringir los repositorios por función y proyecto, exigir MFA, registrar descargas y cambios, proteger secretos, revisar permisos regularmente y usar alertas para exportaciones masivas o accesos inusuales.
-- **Justificación de prioridad:** El antecedente público de 2022 demuestra que la confidencialidad del material de desarrollo merece una revisión específica.
-
-### Riesgo 3. Uso indebido de cuentas privilegiadas, claves o tokens
-
-- **Activo/proceso:** Cuentas administrativas, identidades de servicio y credenciales de nube.
-- **Amenaza:** Robo de credenciales, phishing o uso indebido de una cuenta con permisos elevados.
-- **Vulnerabilidad:** Posible exceso de privilegios, credenciales de larga duración o falta de rotación; estos puntos deben comprobarse mediante entrevistas y revisión de configuración.
-- **Riesgo y consecuencia:** Una cuenta comprometida podría ampliar el acceso del atacante, facilitar la extracción de información o permitir cambios no autorizados.
-- **Probabilidad:** 3/5.
-- **Impacto:** 5/5.
-- **Nivel:** **15/25 — Alto.**
-- **Control actual/evidencia:** No se encontraron evidencias públicas suficientes para determinar la configuración actual de las cuentas privilegiadas.
-- **Control propuesto:** Usar MFA resistente al phishing para accesos administrativos cuando sea posible, privilegios temporales, bóveda de secretos, rotación de claves, revisión de permisos y alertas de inicio de sesión anómalo.
-- **Justificación de prioridad:** El impacto potencial es alto porque estas cuentas pueden dar acceso a múltiples sistemas y datos.
-
-### Riesgo 4. Detección tardía y respuesta insuficiente ante un incidente
-
-- **Activo/proceso:** Registros de seguridad, monitoreo, equipo de respuesta y comunicación del incidente.
-- **Amenaza:** Ataques que pasan inadvertidos o se atienden tarde.
-- **Vulnerabilidad:** No hay evidencia pública suficiente para afirmar que Rockstar tenga deficiencias de monitoreo. Se debe verificar cobertura de registros, tiempos de detección y pruebas del plan de respuesta.
-- **Riesgo y consecuencia:** Una detección tardía puede aumentar el tiempo de permanencia del atacante, la cantidad de información expuesta y el costo de recuperación.
-- **Probabilidad:** 3/5.
-- **Impacto:** 4/5.
-- **Nivel:** **12/25 — Alto.**
-- **Control actual/evidencia:** La existencia de incidentes públicos no permite concluir por sí sola que la detección haya sido tardía ni evaluar la calidad de la respuesta. Los registros y procedimientos internos no son públicos.
-- **Control propuesto:** Definir un plan de respuesta con responsables y escalamiento, centralizar registros, generar alertas para accesos de terceros y descargas inusuales, hacer simulacros y documentar las lecciones aprendidas.
-- **Justificación de prioridad:** Una respuesta preparada puede limitar las consecuencias de los riesgos de acceso y filtración descritos anteriormente.
-
-### Riesgo 5. Interrupción de servicios en línea
-
-- **Activo/proceso:** Infraestructura de los servicios en línea y operaciones de soporte.
-- **Amenaza:** Ataques de denegación de servicio, errores de configuración, fallas de infraestructura o cambios defectuosos.
-- **Vulnerabilidad:** No se afirma que exista una falla actual. Deben evaluarse redundancia, monitoreo, gestión de cambios y capacidad de recuperación.
-- **Riesgo y consecuencia:** Los jugadores podrían no poder iniciar sesión o utilizar funciones en línea, lo que ocasionaría quejas, trabajo adicional de soporte y afectación reputacional.
-- **Probabilidad:** 3/5.
-- **Impacto:** 4/5.
-- **Nivel:** **12/25 — Alto.**
-- **Control actual/evidencia:** No se dispone de métricas internas verificables sobre disponibilidad, incidentes o acuerdos de nivel de servicio.
-- **Control propuesto:** Monitorear disponibilidad y rendimiento, probar medidas de protección contra tráfico malicioso, establecer procedimientos de escalamiento y validar planes de continuidad y recuperación.
-- **Justificación de prioridad:** La disponibilidad es importante para los servicios digitales de una empresa de videojuegos, aunque la puntuación debe validarse con métricas reales.
-
-### Riesgo 6. Pérdida de información o recuperación incompleta
-
-- **Activo/proceso:** Copias de seguridad, repositorios y procedimientos de recuperación.
-- **Amenaza:** Borrado accidental, ransomware, corrupción de datos o falla de almacenamiento.
-- **Vulnerabilidad:** No se conocen públicamente la frecuencia, aislamiento ni resultados de las pruebas de recuperación. Son aspectos por verificar, no fallas confirmadas.
-- **Riesgo y consecuencia:** La empresa podría perder avances de desarrollo o tardar en restablecer sistemas y servicios.
-- **Probabilidad:** 2/5.
-- **Impacto:** 5/5.
-- **Nivel:** **10/25 — Medio.**
-- **Control actual/evidencia:** No se cuenta con evidencia pública suficiente para evaluar las copias de seguridad y las pruebas de restauración.
-- **Control propuesto:** Mantener copias cifradas y aisladas, limitar quién puede borrarlas, probar restauraciones periódicamente y definir objetivos de recuperación (RTO/RPO) para los sistemas críticos.
-- **Justificación de prioridad:** Aunque la probabilidad estimada es menor, el impacto de perder información de desarrollo puede ser muy alto.
+| # | Activo o proceso | Amenaza | Vulnerabilidad o condición por verificar | Riesgo y consecuencia | Prob. (1–5) | Impacto (1–5) | Nivel | Control actual / evidencia pública | Control propuesto | Justificación de prioridad |
+|---|---|---|---|---|---:|---:|---|---|---|---|
+| 1 | Plataformas de nube e información corporativa | Atacantes externos que aprovechan accesos o integraciones de proveedores | Posible debilidad en permisos, credenciales o conexión de un tercero. El vector técnico exacto del incidente de 2026 debe verificarse. | Acceso o extracción de información confidencial, con posibles costos de investigación, extorsión o daño reputacional. | 4 | 4 | **16 — Crítico** | Rockstar confirmó en abril de 2026 que se accedió a una cantidad limitada de información corporativa no material en un incidente relacionado con un tercero. Los controles específicos no son verificables públicamente. | Aplicar mínimo privilegio a proveedores, limitar alcance y duración de tokens, usar MFA cuando corresponda, revisar integraciones, revocar accesos innecesarios y monitorear actividad anormal. | Prioridad alta porque existe un incidente público reciente relacionado con terceros y acceso a información. |
+| 2 | Código, diseños, videos de prueba y versiones preliminares de videojuegos | Intrusos externos o personas que obtienen acceso no autorizado | La exposición actual no está confirmada. Revisar permisos de repositorios, separación de ambientes y protección de archivos confidenciales. | Divulgación anticipada que podría afectar lanzamientos, facilitar fraudes, perjudicar la ventaja competitiva y dañar la reputación. | 4 | 5 | **20 — Crítico** | En 2022, Take-Two informó que un tercero accedió a sistemas de Rockstar y descargó información confidencial, incluido material temprano de desarrollo. No se verifican aquí los controles actuales. | Restringir repositorios por función y proyecto, exigir MFA, registrar descargas y cambios, proteger secretos y alertar sobre exportaciones masivas o accesos inusuales. | Es el puntaje más alto y existe un antecedente público relacionado con material de desarrollo. |
+| 3 | Cuentas administrativas, identidades de servicio y credenciales de nube | Robo de credenciales, phishing o uso indebido de cuentas privilegiadas | Posible exceso de privilegios, credenciales de larga duración o falta de rotación; debe comprobarse mediante revisión de configuración. | Una cuenta comprometida podría ampliar el acceso del atacante, facilitar la extracción de información o permitir cambios no autorizados. | 3 | 5 | **15 — Alto** | No se encontró evidencia pública suficiente para determinar la configuración actual de cuentas privilegiadas. | Usar MFA resistente al phishing cuando sea posible, privilegios temporales, bóveda de secretos, rotación de claves, revisión de permisos y alertas de inicio de sesión anómalo. | El impacto potencial es alto porque estas cuentas pueden dar acceso a varios sistemas y datos. |
+| 4 | Registros de seguridad, monitoreo y respuesta a incidentes | Ataques que pasan inadvertidos o se atienden tarde | No hay evidencia pública suficiente para afirmar que exista una deficiencia. Verificar cobertura de registros, tiempos de detección y pruebas del plan de respuesta. | La detección tardía podría aumentar el tiempo de permanencia del atacante, la información expuesta y el costo de recuperación. | 3 | 4 | **12 — Alto** | Los incidentes públicos no permiten concluir por sí solos que la detección haya sido tardía ni evaluar la respuesta. Los registros internos no son públicos. | Definir responsables y escalamiento, centralizar registros, alertar sobre accesos de terceros y descargas inusuales, hacer simulacros y documentar lecciones aprendidas. | Una respuesta preparada puede limitar las consecuencias de los riesgos de acceso y filtración. |
+| 5 | Infraestructura de servicios en línea y soporte | Denegación de servicio, errores de configuración, fallas de infraestructura o cambios defectuosos | No se afirma que exista una falla actual. Evaluar redundancia, monitoreo, gestión de cambios y recuperación. | Los jugadores podrían no iniciar sesión o usar funciones en línea, causando quejas, más trabajo de soporte y daño reputacional. | 3 | 4 | **12 — Alto** | No se dispone de métricas internas verificables sobre disponibilidad, incidentes o acuerdos de nivel de servicio. | Monitorear disponibilidad y rendimiento, probar protección contra tráfico malicioso, definir escalamiento y validar planes de continuidad y recuperación. | La disponibilidad es importante para los servicios digitales, pero el puntaje debe validarse con métricas reales. |
+| 6 | Copias de seguridad, repositorios y recuperación | Borrado accidental, ransomware, corrupción de datos o falla de almacenamiento | No se conocen públicamente la frecuencia, aislamiento ni resultados de las pruebas de recuperación; son aspectos por verificar, no fallas confirmadas. | Pérdida de avances de desarrollo o demora en restablecer sistemas y servicios. | 2 | 5 | **10 — Medio** | No hay evidencia pública suficiente para evaluar copias de seguridad y pruebas de restauración. | Mantener copias cifradas y aisladas, limitar quién puede borrarlas, probar restauraciones y definir objetivos de recuperación (RTO/RPO) para sistemas críticos. | La probabilidad estimada es menor, pero perder información de desarrollo tendría un impacto alto. |
 
 ## 6. Orden recomendado de atención
 
