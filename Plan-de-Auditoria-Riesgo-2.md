@@ -10,7 +10,11 @@
 
 Rockstar Games desarrolla videojuegos y utiliza repositorios, archivos digitales y servicios tecnológicos para almacenar código, diseños, material audiovisual y versiones preliminares de sus productos. Esta información es importante para el desarrollo y la propiedad intelectual de la empresa.
 
-En el taller anterior se identificaron riesgos relacionados con el acceso no autorizado a información corporativa y de desarrollo. Como antecedente, en septiembre de 2022 Take-Two Interactive informó que un tercero había accedido a sistemas de Rockstar y descargado información confidencial, incluido material de desarrollo temprano. Este hecho justifica revisar cómo se restringe y supervisa el acceso a los activos de desarrollo.
+En el taller anterior se identificaron riesgos relacionados con el acceso no autorizado a información corporativa y de desarrollo. En septiembre de 2022, Take-Two Interactive informó que un tercero había accedido a sistemas de Rockstar y descargado información confidencial, incluido material de desarrollo temprano.
+
+Además, en abril de 2026 Rockstar confirmó que una cantidad limitada de información corporativa no material fue accedida durante una brecha de un proveedor externo. El grupo ShinyHunters afirmó que el acceso se relacionó con la integración de Anodot y el entorno de datos Snowflake de Rockstar. Posteriormente, el grupo publicó información que, según los reportes, incluía métricas internas relacionadas con GTA Online y Red Dead Online. Rockstar indicó que el incidente no tuvo impacto en sus operaciones ni en los jugadores. No hay evidencia pública que permita afirmar que en este incidente se filtraran el código fuente, los materiales de desarrollo de GTA VI o datos personales de jugadores. [The Record](https://therecord.media/rockstar-hackers-cyberattack-cloud) y [TechCrunch](https://techcrunch.com/2026/04/13/hack-at-anodot-leaves-over-a-dozen-breached-companies-facing-extortion/) reportaron el incidente y la declaración de la empresa.
+
+Los dos antecedentes permiten observar riesgos diferentes: el de 2022 estuvo relacionado con material de desarrollo, mientras que el de 2026 se relacionó con información corporativa accedida a través de un tercero. El segundo refuerza la importancia de revisar las integraciones externas y los permisos concedidos a proveedores, aunque el presente plan mantiene como foco el riesgo 2 de la matriz: la protección del material de desarrollo.
 
 Este plan es una propuesta académica. No se tiene acceso a los sistemas ni a los controles internos de Rockstar, por lo que no se afirma que exista actualmente una vulnerabilidad ni que un control esté ausente.
 
@@ -30,7 +34,7 @@ Se selecciona el **riesgo 2 de la matriz de riesgos del taller anterior: filtrac
 | Nivel | **20/25 — Crítico** |
 | Control propuesto en la matriz | Restringir repositorios según función y proyecto, exigir autenticación multifactor, registrar accesos y cambios, proteger secretos y alertar sobre exportaciones masivas o accesos inusuales. |
 
-Se elige porque obtuvo el puntaje más alto de la matriz y porque existe un antecedente público relacionado con la descarga no autorizada de material de desarrollo. Además, es posible plantear pruebas concretas sobre permisos, cuentas y registros. La auditoría permitiría evaluar si los controles diseñados para proteger esos activos están definidos y funcionan de acuerdo con los criterios establecidos.
+Se elige porque obtuvo el puntaje más alto de la matriz y porque el incidente de 2022 estuvo relacionado directamente con la descarga no autorizada de material de desarrollo. El incidente de abril de 2026 aporta un antecedente adicional: muestra que también deben revisarse los accesos otorgados a proveedores y las integraciones con servicios externos. Sin embargo, no se debe confundir ambos casos ni afirmar que la filtración de 2026 incluyó material de GTA VI. Es posible plantear pruebas concretas sobre permisos, cuentas y registros para evaluar si los controles que protegen los activos de desarrollo están definidos y funcionan de acuerdo con los criterios establecidos.
 
 **Referencia:** Taller anterior, sección 5, matriz de riesgos, fila 2. [Consultar matriz completa](Taller-2-Matriz-de-Riesgos.md).
 
@@ -153,7 +157,9 @@ La ejecución depende de la autorización de Rockstar y de que entregue informac
 **Hechos comprobados mediante fuentes públicas**
 
 - Take-Two Interactive informó en una presentación ante la SEC que en septiembre de 2022 un tercero accedió sin autorización a sistemas de Rockstar y descargó información confidencial, incluido material de desarrollo temprano.
-- La matriz anterior registra este antecedente como fundamento para priorizar la revisión de los activos de desarrollo.
+- En abril de 2026, Rockstar confirmó el acceso a una cantidad limitada de información corporativa no material en una brecha relacionada con un tercero. Los reportes vincularon el incidente con Anodot y Snowflake; la información publicada posteriormente fue descrita como métricas internas relacionadas con GTA Online y Red Dead Online. Rockstar afirmó que no hubo impacto en la organización ni en los jugadores.
+- Los reportes públicos no respaldan afirmar que la filtración de abril de 2026 incluyera código fuente, material de desarrollo de GTA VI o datos personales de jugadores.
+- La matriz anterior registra el antecedente de 2022 como fundamento directo para priorizar la revisión de los activos de desarrollo. El incidente de 2026 es un antecedente complementario sobre riesgo de terceros y accesos a datos corporativos.
 
 **Supuestos del plan**
 
@@ -186,8 +192,11 @@ Los dos procedimientos permiten revisar tanto el diseño de los controles como s
 ## 10. Fuentes y documentos relacionados
 
 1. [SEC — Presentación de Take-Two Interactive con información sobre el incidente de septiembre de 2022](https://www.sec.gov/Archives/edgar/data/946581/000162828025026694/ttwo-20250331.htm).
-2. [ISO — ISO/IEC 27001:2022, Information security management systems](https://www.iso.org/standard/27001).
-3. [Taller 2 — Matriz de riesgos de Rockstar Games](Taller-2-Matriz-de-Riesgos.md), especialmente sección 5, fila 2.
+2. [The Record — Reporte sobre la brecha de Rockstar vinculada con un proveedor externo (13 de abril de 2026)](https://therecord.media/rockstar-hackers-cyberattack-cloud).
+3. [TechCrunch — Brecha de Anodot y afectación de empresas clientes, incluida Rockstar (13 de abril de 2026)](https://techcrunch.com/2026/04/13/hack-at-anodot-leaves-over-a-dozen-breached-companies-facing-extortion/).
+4. [BBC — Rockstar confirma el acceso a información corporativa en el incidente de 2026](https://www.bbc.com/news/articles/cx2dg5g1le7o).
+5. [ISO — ISO/IEC 27001:2022, Information security management systems](https://www.iso.org/standard/27001).
+6. [Taller 2 — Matriz de riesgos de Rockstar Games](Taller-2-Matriz-de-Riesgos.md), especialmente sección 5, filas 1 y 2.
 
 ---
 
